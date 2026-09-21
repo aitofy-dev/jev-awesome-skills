@@ -1,13 +1,21 @@
-# @aitofy/jev-awesome-skills
+# Jev skills for Claude Code, Codex, Cursor, and Grok
 
 [![CI](https://github.com/aitofy-dev/jev-awesome-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/aitofy-dev/jev-awesome-skills/actions/workflows/ci.yml)
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Jev skills for coding agents. One client decides when to proceed, when to ask you, and when to stop — then uses that same judgment to route a skill, guard a command, verify a claim, triage a record, review a diff, or pick the next legal action.
+Open-source TypeSafe Jev skills. One client decides when to proceed, when to ask you, and when to stop — then uses that same judgment to route a skill, guard a command, verify a claim, triage a record, review a diff, or pick the next legal action.
 
-Jev (TypeSafe System One) returns probabilities for a closed `choice`, `noul`, or `score`. It does not write the code. This package is the open-source catalog agents run, instead of a hand-rolled script per job.
+Jev (TypeSafe System One) returns probabilities for a closed `choice`, `noul`, or `score`. It does not write the code. This is the catalog a Claude Code, Codex, Cursor, or Grok agent runs, instead of a hand-rolled Jev script per job. Package name: `@aitofy/jev-awesome-skills`.
 
 ## Install
+
+The GitHub repo is the install that works today:
+
+```bash
+npm i github:aitofy-dev/jev-awesome-skills
+```
+
+When the package is on npm:
 
 ```bash
 npm i @aitofy/jev-awesome-skills
@@ -120,11 +128,19 @@ Other public Jev work, listed so you can see the jobs. A link is not an endorsem
 | [dbreunig/building-with-jev-skill](https://github.com/dbreunig/building-with-jev-skill) | Skill for designing questions |
 | [Anil-matcha/awesome-jev-by-typesafe](https://github.com/Anil-matcha/awesome-jev-by-typesafe) | Project directory |
 
+## For agents and crawlers
+
+- [llms.txt](llms.txt) is the index, with raw links.
+- [llms-full.txt](llms-full.txt) is the README and every skill in one file.
+- Raw index: <https://raw.githubusercontent.com/aitofy-dev/jev-awesome-skills/main/llms.txt>
+
+Regenerate both with `node scripts/llms.mjs` after a skill edit.
+
 ## Development
 
 ```bash
 npm install
-node --run test
+npm test
 ```
 
 MIT. No telemetry.

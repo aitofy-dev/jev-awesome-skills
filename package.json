@@ -1,7 +1,7 @@
 {
   "name": "@aitofy/jev-awesome-skills",
   "version": "0.1.0",
-  "description": "Awesome Jev skills for coding agents. Proceed, ask, or stop; route a skill, guard a command, verify a claim, triage a record, review a diff, or pick the next legal action.",
+  "description": "Open-source Jev skills for Claude Code, Codex, Cursor, and Grok. TypeSafe System One choice, noul, and score: proceed, ask, or stop.",
   "type": "module",
   "bin": {
     "jev": "./dist/cli.js",
@@ -22,7 +22,8 @@
     "README.md",
     "CHANGELOG.md",
     "LICENSE",
-    "llms.txt"
+    "llms.txt",
+    "llms-full.txt"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json && chmod +x dist/cli.js",
@@ -51,12 +52,16 @@
     "agent-skills",
     "awesome-jev",
     "claude",
+    "claude-code",
     "codex",
     "grok",
     "cursor",
     "ai-agent",
     "noul",
-    "guardrails"
+    "guardrails",
+    "awesome-list",
+    "llm",
+    "systemone"
   ],
   "sideEffects": false,
   "publishConfig": {

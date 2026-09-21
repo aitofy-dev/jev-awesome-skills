@@ -82,6 +82,21 @@ test('shipped fixtures are proceed, ask, and stop', () => {
   assert.equal(decideFixture(readJson('guard.response.json')).branch, 'stop')
 })
 
+test('llms.txt indexes every skill and llms-full contains the skill text', () => {
+  const index = readFileSync(`${root}/llms.txt`, 'utf8')
+  const full = readFileSync(`${root}/llms-full.txt`, 'utf8')
+  const names = ['jev-awesome-skills', ...useCaseNames.map((name) => `jev-${name}`)]
+  for (const name of names) {
+    assert.match(index, new RegExp(`skills/${name}/SKILL.md`))
+    const body = readFileSync(`${root}/skills/${name}/SKILL.md`, 'utf8').trim()
+    assert.ok(full.includes(body.slice(0, 120)), name)
+  }
+  assert.match(index, /llms-full\.txt/)
+  assert.match(index, /choice/)
+  assert.match(index, /noul/)
+  assert.match(index, /score/)
+})
+
 function readJson(name) {
   return JSON.parse(readFileSync(`${root}/examples/${name}`, 'utf8'))
 }

@@ -1,16 +1,31 @@
-# @aitofy/jev-awesome-skills
+# Jev awesome skills
 
-> Jev skills for coding agents. Proceed, ask, or stop. Route a skill, guard a command, verify a claim, triage a record, review a diff, or pick the next legal action.
+> Open-source TypeSafe Jev (System One) skills for coding agents. Closed choice, noul, and score judgments. The host writes the code. Jev returns probabilities only: proceed, ask, or stop.
 
-- [README](README.md): what it is, install, one offline example
-- [Policy skill](skills/jev-awesome-skills/SKILL.md): fail open and the 0.9 / 1.5 cutoffs
-- [Gate](skills/jev-gate/SKILL.md)
-- [Route](skills/jev-route/SKILL.md)
-- [Guard](skills/jev-guard/SKILL.md)
-- [Verify](skills/jev-verify/SKILL.md)
-- [Triage](skills/jev-triage/SKILL.md)
-- [Review](skills/jev-review/SKILL.md)
-- [Act](skills/jev-act/SKILL.md)
-- [Changelog](CHANGELOG.md)
+People find this as a Jev skill for Claude Code, Codex, Cursor, or Grok, and as an awesome Jev catalog. It is not the official TypeSafe skill, and it does not invent star counts or accuracy numbers.
 
-The CLI is `jev`. Dry-run and `--fixture` do not call the network. A live call reads `TYPESAFE_API_KEY` from the environment and must not print it.
+Install today from Git: `npm i github:aitofy-dev/jev-awesome-skills`. The npm name is `@aitofy/jev-awesome-skills`. Dry-run needs no API key. A live call reads the environment variable TYPESAFE_API_KEY and must not print it.
+
+## Docs
+
+- [README](https://github.com/aitofy-dev/jev-awesome-skills/blob/main/README.md): what it is, install, one offline example. Raw: https://raw.githubusercontent.com/aitofy-dev/jev-awesome-skills/main/README.md
+- [llms-full.txt](https://raw.githubusercontent.com/aitofy-dev/jev-awesome-skills/main/llms-full.txt): this index, the README, and every skill in one file.
+- [Changelog](https://github.com/aitofy-dev/jev-awesome-skills/blob/main/CHANGELOG.md)
+
+## Skills
+
+- [jev-awesome-skills](https://github.com/aitofy-dev/jev-awesome-skills/blob/main/skills/jev-awesome-skills/SKILL.md): When to call Jev, fail open, and the proceed / ask / stop cutoffs. Raw: https://raw.githubusercontent.com/aitofy-dev/jev-awesome-skills/main/skills/jev-awesome-skills/SKILL.md
+- [jev-gate](https://github.com/aitofy-dev/jev-awesome-skills/blob/main/skills/jev-gate/SKILL.md): Proceed, ask, or stop when the repo may already decide a closed choice. Raw: https://raw.githubusercontent.com/aitofy-dev/jev-awesome-skills/main/skills/jev-gate/SKILL.md
+- [jev-route](https://github.com/aitofy-dev/jev-awesome-skills/blob/main/skills/jev-route/SKILL.md): Pick one installed skill or tool, or none. Raw: https://raw.githubusercontent.com/aitofy-dev/jev-awesome-skills/main/skills/jev-route/SKILL.md
+- [jev-guard](https://github.com/aitofy-dev/jev-awesome-skills/blob/main/skills/jev-guard/SKILL.md): Before a command that might destroy data, leak a secret, or leave the task. Raw: https://raw.githubusercontent.com/aitofy-dev/jev-awesome-skills/main/skills/jev-guard/SKILL.md
+- [jev-verify](https://github.com/aitofy-dev/jev-awesome-skills/blob/main/skills/jev-verify/SKILL.md): Before reporting a claim or done. Raw: https://raw.githubusercontent.com/aitofy-dev/jev-awesome-skills/main/skills/jev-verify/SKILL.md
+- [jev-triage](https://github.com/aitofy-dev/jev-awesome-skills/blob/main/skills/jev-triage/SKILL.md): One label for a record you already have. Raw: https://raw.githubusercontent.com/aitofy-dev/jev-awesome-skills/main/skills/jev-triage/SKILL.md
+- [jev-review](https://github.com/aitofy-dev/jev-awesome-skills/blob/main/skills/jev-review/SKILL.md): Ship, fix, or ask a person. Does not merge. Raw: https://raw.githubusercontent.com/aitofy-dev/jev-awesome-skills/main/skills/jev-review/SKILL.md
+- [jev-act](https://github.com/aitofy-dev/jev-awesome-skills/blob/main/skills/jev-act/SKILL.md): Next action from a list you observed. No invented clicks. Raw: https://raw.githubusercontent.com/aitofy-dev/jev-awesome-skills/main/skills/jev-act/SKILL.md
+
+## Examples
+
+- [Gate request](https://raw.githubusercontent.com/aitofy-dev/jev-awesome-skills/main/examples/gate.request.json)
+- [Gate fixture, branch proceed](https://raw.githubusercontent.com/aitofy-dev/jev-awesome-skills/main/examples/gate.response.json)
+- [Route fixture, branch ask](https://raw.githubusercontent.com/aitofy-dev/jev-awesome-skills/main/examples/route.response.json)
+- [Guard fixture, branch stop](https://raw.githubusercontent.com/aitofy-dev/jev-awesome-skills/main/examples/guard.response.json)
