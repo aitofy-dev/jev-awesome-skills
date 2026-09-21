@@ -1,6 +1,6 @@
 {
   "name": "@aitofy/jev-awesome-skills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Open-source Jev skills for Claude Code, Codex, Cursor, and Grok. TypeSafe System One choice, noul, and score: proceed, ask, or stop.",
   "type": "module",
   "bin": {
@@ -29,6 +29,7 @@
     "build": "tsc -p tsconfig.build.json && chmod +x dist/cli.js",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "npm run build && node --test test/*.test.mjs",
+    "prepare": "npm run build",
     "prepublishOnly": "npm run build"
   },
   "engines": {

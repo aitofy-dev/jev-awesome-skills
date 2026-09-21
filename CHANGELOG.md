@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+`prepare` builds the package on install from Git. A clone has no `dist/`; the install produces `dist/index.js` and the `jev` command.
+
 ## 0.1.0
 
 First public release of the Jev skill catalog for coding agents.

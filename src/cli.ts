@@ -107,12 +107,18 @@ function asRequest(payload: unknown): { ok: true; value: { state: Json; question
 
 export function parseArgs(argv: string[]): Args {
   if (argv.length === 0 || argv.includes('--help') || argv.includes('-h')) return { kind: 'help' }
-  const file = readFlag(argv, '--file') ?? readFlag(argv, '-f')
-  if (file instanceof Error) return { kind: 'error', message: file.message }
   if (argv[0] === 'questions') return parseQuestions(argv.slice(1))
+  const flagged = readFlag(argv, '--file') ?? readFlag(argv, '-f')
+  if (flagged instanceof Error) return { kind: 'error', message: flagged.message }
+  const positional = argv.find((arg, index) => {
+    if (arg.startsWith('-')) return false
+    const previous = argv[index - 1]
+    return previous !== '--file' && previous !== '-f'
+  })
+  const file = flagged ?? positional
   const mode = argv.includes('--fixture') ? 'fixture' : argv.includes('--dry-run') ? 'dry-run' : 'live'
-  if ((mode === 'fixture' || mode === 'dry-run' || mode === 'live') && argv.includes('--file') && !file) {
-    return { kind: 'error', message: '--file needs a path.' }
+  if ((argv.includes('--fixture') || argv.includes('--dry-run')) && !file) {
+    return { kind: 'error', message: 'Pass a JSON file: jev --fixture response.json' }
   }
   return { kind: mode, ...(file ? { file } : {}) }
 }

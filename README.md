@@ -9,16 +9,14 @@ Jev (TypeSafe System One) returns probabilities for a closed `choice`, `noul`, o
 
 ## Install
 
-The GitHub repo is the install that works today:
+```bash
+npm i @aitofy/jev-awesome-skills
+```
+
+A Git install builds `dist` before the package is packed, so the import and the `jev` command exist without a committed build:
 
 ```bash
 npm i github:aitofy-dev/jev-awesome-skills
-```
-
-When the package is on npm:
-
-```bash
-npm i @aitofy/jev-awesome-skills
 ```
 
 Node 20+. ESM. No runtime dependencies. The API key stays in the environment variable `TYPESAFE_API_KEY`. The CLI never prints it. Dry-run and `--fixture` need no key.
@@ -34,8 +32,8 @@ cp -R skills/jev-awesome-skills skills/jev-gate skills/jev-route skills/jev-guar
 Prompt you can give the agent:
 
 ```text
-Install the skills in github.com/aitofy-dev/jev-awesome-skills.
-Use npx @aitofy/jev-awesome-skills for every judgment. Do not write a second HTTP client.
+Install @aitofy/jev-awesome-skills, or the GitHub repo of the same name.
+Run the jev command from that install (`npx jev --dry-run --file request.json`). Do not write a second HTTP client.
 Dry-run first. Do not call the network until I confirm.
 Read the API key only from the environment. Never print it or ask me to paste it.
 ```
