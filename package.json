@@ -44,7 +44,7 @@
   "bugs": {
     "url": "https://github.com/aitofy-dev/jev-awesome-skills/issues"
   },
-  "homepage": "https://github.com/aitofy-dev/jev-awesome-skills#readme",
+  "homepage": "https://www.npmjs.com/package/@aitofy/jev-awesome-skills",
   "keywords": [
     "jev",
     "typesafe",

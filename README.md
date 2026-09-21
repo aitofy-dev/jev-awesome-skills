@@ -1,5 +1,6 @@
 # Jev skills for Claude Code, Codex, Cursor, and Grok
 
+[![npm](https://img.shields.io/npm/v/@aitofy/jev-awesome-skills)](https://www.npmjs.com/package/@aitofy/jev-awesome-skills)
 [![CI](https://github.com/aitofy-dev/jev-awesome-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/aitofy-dev/jev-awesome-skills/actions/workflows/ci.yml)
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
