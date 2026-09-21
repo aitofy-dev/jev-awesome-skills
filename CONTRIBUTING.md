@@ -2,8 +2,8 @@
 
 ```
 npm install
-node --run typecheck
-node --run test
+npm run typecheck
+npm test
 ```
 
 Node 20 or newer. The tests are offline. Do not add an API key, a token, or a live-call fixture to the repo.
