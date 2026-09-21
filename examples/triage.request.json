@@ -1,0 +1,32 @@
+{
+  "state": {
+    "record": "The export button errors for every teammate. We need the monthly report tomorrow."
+  },
+  "model": "jev-latest",
+  "questions": {
+    "pick": {
+      "type": "choice",
+      "instructions": "Which label fits this record?",
+      "criteria": {
+        "billing": "Payment, invoice, refund, or subscription",
+        "bug": "Something is broken",
+        "how_to": "A question about how to use the product",
+        "other": "Does not fit the other labels",
+        "ask_user": "A person should label this record"
+      }
+    },
+    "determined": {
+      "type": "noul",
+      "instructions": "Does the record already determine one label, so the host can apply it without asking the user?"
+    },
+    "harm": {
+      "type": "score",
+      "instructions": "How much harm could applying the wrong label cause?",
+      "criteria": [
+        "Read-only or easily reversible",
+        "Changes behavior but is testable",
+        "May destroy data, leak a secret, or go beyond the task"
+      ]
+    }
+  }
+}

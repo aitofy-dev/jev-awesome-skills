@@ -1,0 +1,69 @@
+{
+  "name": "@aitofy/jev-awesome-skills",
+  "version": "0.1.0",
+  "description": "Awesome Jev skills for coding agents. Proceed, ask, or stop; route a skill, guard a command, verify a claim, triage a record, review a diff, or pick the next legal action.",
+  "type": "module",
+  "bin": {
+    "jev": "./dist/cli.js",
+    "jev-awesome-skills": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "skills",
+    "examples",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "llms.txt"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "author": "Aitofy <hello@aitofy.dev>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aitofy-dev/jev-awesome-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aitofy-dev/jev-awesome-skills/issues"
+  },
+  "homepage": "https://github.com/aitofy-dev/jev-awesome-skills#readme",
+  "keywords": [
+    "jev",
+    "typesafe",
+    "typesafe-ai",
+    "system-one",
+    "agent-skills",
+    "awesome-jev",
+    "claude",
+    "codex",
+    "grok",
+    "cursor",
+    "ai-agent",
+    "noul",
+    "guardrails"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}

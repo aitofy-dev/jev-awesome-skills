@@ -1,0 +1,37 @@
+{
+  "state": {
+    "goal": "Open Settings and select Appearance",
+    "observed": [
+      "Settings window is open",
+      "Appearance row is visible"
+    ],
+    "not_observed": [
+      "A click coordinate was not measured by this package"
+    ]
+  },
+  "model": "jev-latest",
+  "questions": {
+    "pick": {
+      "type": "choice",
+      "instructions": "Which listed action should happen next?",
+      "criteria": {
+        "abstain": "Stop and ask. Do not invent an action that was not listed.",
+        "reobserve": "Look again and change nothing.",
+        "click_appearance": "The Appearance row is visible in the Settings sidebar"
+      }
+    },
+    "determined": {
+      "type": "noul",
+      "instructions": "Does the observation already determine the next legal action, so the host can take it without asking the user?"
+    },
+    "harm": {
+      "type": "score",
+      "instructions": "How much harm could taking the chosen action cause?",
+      "criteria": [
+        "Read-only or easily reversible",
+        "Changes behavior but is testable",
+        "May destroy data, leak a secret, or go beyond the task"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "state": {
+    "task": "Add a test script",
+    "evidence": [
+      "pnpm-lock.yaml is present",
+      "package-lock.json is absent",
+      "package.json packageManager is pnpm@9"
+    ]
+  },
+  "model": "jev-latest",
+  "questions": {
+    "pick": {
+      "type": "choice",
+      "instructions": "Which option does the context already support?",
+      "criteria": {
+        "pnpm": "pnpm-lock.yaml is present",
+        "npm": "package-lock.json is present",
+        "ask_user": "the lockfile does not decide"
+      }
+    },
+    "determined": {
+      "type": "noul",
+      "instructions": "Does the context already determine a single answer, so the host can proceed without asking the user?"
+    },
+    "harm": {
+      "type": "score",
+      "instructions": "How much harm could following the chosen option cause?",
+      "criteria": [
+        "Read-only or easily reversible",
+        "Changes behavior but is testable",
+        "May destroy data, leak a secret, or go beyond the task"
+      ]
+    }
+  }
+}

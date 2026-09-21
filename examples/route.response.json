@@ -1,0 +1,21 @@
+{
+  "model": "fixture-offline",
+  "answers": {
+    "pick": {
+      "type": "choice",
+      "choice": "repo-review",
+      "probabilities": { "repo-review": 0.55, "test-writer": 0.3, "none": 0.1, "ask_user": 0.05 }
+    },
+    "determined": { "type": "noul", "noul": 0.42 },
+    "harm": {
+      "type": "score",
+      "score": 0.3,
+      "legend": {
+        "0": "Read-only or easily reversible",
+        "1": "Changes behavior but is testable",
+        "2": "May destroy data, leak a secret, or go beyond the task"
+      },
+      "probabilities": { "0": 0.7, "1": 0.3, "2": 0 }
+    }
+  }
+}

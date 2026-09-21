@@ -1,0 +1,23 @@
+{
+  "model": "fixture-offline",
+  "answers": {
+    "pick": {
+      "type": "choice",
+      "choice": "pnpm",
+      "confidence": 0.96,
+      "probabilities": { "pnpm": 0.97, "npm": 0.02, "ask_user": 0.01 }
+    },
+    "determined": { "type": "noul", "noul": 0.95 },
+    "harm": {
+      "type": "score",
+      "score": 0.2,
+      "confidence": 0.88,
+      "legend": {
+        "0": "Read-only or easily reversible",
+        "1": "Changes behavior but is testable",
+        "2": "May destroy data, leak a secret, or go beyond the task"
+      },
+      "probabilities": { "0": 0.8, "1": 0.2, "2": 0 }
+    }
+  }
+}

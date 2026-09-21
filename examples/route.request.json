@@ -1,0 +1,36 @@
+{
+  "state": {
+    "request": "Review the diff for security issues and do not change files",
+    "installed": [
+      "repo-review",
+      "test-writer",
+      "release"
+    ]
+  },
+  "model": "jev-latest",
+  "questions": {
+    "pick": {
+      "type": "choice",
+      "instructions": "Which listed skill should handle this request?",
+      "criteria": {
+        "none": "No listed skill fits",
+        "ask_user": "A person should pick the skill",
+        "repo-review": "Inspect the diff and report file-backed findings",
+        "test-writer": "Add or fix tests for this change"
+      }
+    },
+    "determined": {
+      "type": "noul",
+      "instructions": "Does the request already determine one listed skill, so the host can load it without asking the user?"
+    },
+    "harm": {
+      "type": "score",
+      "instructions": "How much harm could loading the chosen skill cause?",
+      "criteria": [
+        "Read-only or easily reversible",
+        "Changes behavior but is testable",
+        "May destroy data, leak a secret, or go beyond the task"
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "state": {
+    "claim": "The login bug is fixed",
+    "evidence": [
+      "The login test failed before the patch and passed after"
+    ],
+    "missing": [
+      "No other suite was run"
+    ]
+  },
+  "model": "jev-latest",
+  "questions": {
+    "pick": {
+      "type": "choice",
+      "instructions": "Is the claim supported by the evidence?",
+      "criteria": {
+        "supported": "The evidence shows the claim",
+        "unsupported": "The evidence contradicts the claim or is missing",
+        "ask_user": "A person should decide what the evidence means"
+      }
+    },
+    "determined": {
+      "type": "noul",
+      "instructions": "Does the evidence already determine whether the claim is true, so the host can report it without asking the user?"
+    },
+    "harm": {
+      "type": "score",
+      "instructions": "How much harm could reporting this claim cause if it is wrong?",
+      "criteria": [
+        "Read-only or easily reversible",
+        "Changes behavior but is testable",
+        "May destroy data, leak a secret, or go beyond the task"
+      ]
+    }
+  }
+}

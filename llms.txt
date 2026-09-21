@@ -1,0 +1,16 @@
+# @aitofy/jev-awesome-skills
+
+> Jev skills for coding agents. Proceed, ask, or stop. Route a skill, guard a command, verify a claim, triage a record, review a diff, or pick the next legal action.
+
+- [README](README.md): what it is, install, one offline example
+- [Policy skill](skills/jev-awesome-skills/SKILL.md): fail open and the 0.9 / 1.5 cutoffs
+- [Gate](skills/jev-gate/SKILL.md)
+- [Route](skills/jev-route/SKILL.md)
+- [Guard](skills/jev-guard/SKILL.md)
+- [Verify](skills/jev-verify/SKILL.md)
+- [Triage](skills/jev-triage/SKILL.md)
+- [Review](skills/jev-review/SKILL.md)
+- [Act](skills/jev-act/SKILL.md)
+- [Changelog](CHANGELOG.md)
+
+The CLI is `jev`. Dry-run and `--fixture` do not call the network. A live call reads `TYPESAFE_API_KEY` from the environment and must not print it.

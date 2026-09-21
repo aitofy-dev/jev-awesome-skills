@@ -1,0 +1,18 @@
+name: Feature
+description: A closed judgment this catalog does not cover yet
+labels: [enhancement]
+body:
+  - type: textarea
+    id: job
+    attributes:
+      label: What should the agent be able to judge?
+      description: The choice, yes/no, or score, and what the host still does itself.
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: One example input
+      description: A state and the labels. No secrets.
+    validations:
+      required: true
